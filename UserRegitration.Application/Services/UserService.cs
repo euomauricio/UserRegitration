@@ -14,13 +14,13 @@ namespace UserRegitration.Application.Services
             _repository = repository;
         }
 
-        public void Add(string login, string password)=> _repository.Add(new Domain.Entities.UserEntity(login, password));
+        public void Add(string login, string password, string email, string tel)=> _repository.Add(new Domain.Entities.UserEntity(login, password, email, tel));
 
         public async Task<List<UserDto>> Get()
         {
             var result = await _repository.Get();
 
-            return result.Select(x => new UserDto(x.Id, x.Login, x.Password)).ToList(); 
+            return result.Select(x => new UserDto(x.Id, x.Login, x.Password, x.Email, x.Tel)).ToList(); 
         }
 
 
@@ -29,7 +29,7 @@ namespace UserRegitration.Application.Services
         {
             var result = await _repository.GetByGuid(id);
 
-            return new UserDto(result.Id, result.Login, result.Password);
+            return new UserDto(result.Id, result.Login, result.Password, result.Email, result.Tel);
         }
     }
 }

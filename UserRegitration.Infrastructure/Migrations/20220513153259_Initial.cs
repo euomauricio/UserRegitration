@@ -15,7 +15,10 @@ namespace UserRegitration.Infrastructure.Migrations
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
                     Login = table.Column<string>(type: "TEXT", nullable: false),
-                    Password = table.Column<string>(type: "TEXT", nullable: false)
+                    Password = table.Column<string>(type: "TEXT", nullable: false),
+                    Email = table.Column<string>(type: "TEXT", nullable: false),
+                    Tel = table.Column<string>(type: "TEXT", nullable: false)
+
                 },
                 constraints: table =>
                 {

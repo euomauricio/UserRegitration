@@ -9,7 +9,7 @@ namespace UserRegitration.Application.Interfaces
 {
     public interface IUserService
     {
-        void Add(string login, string password);
+        void Add(string login, string password, string email, string tel);
 
         Task<List<UserDto>> Get();
 

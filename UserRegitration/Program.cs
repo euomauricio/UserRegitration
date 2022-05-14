@@ -17,7 +17,7 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddDbContext<UserRegistrationContext>(options =>
 {
-    options.UseSqlite("Data Source=D:\\Jovem Programador\\DataBase.db");
+    options.UseSqlite("Data Source=D:\\Jovem Programador\\DataBase2.db");
 });
 
 

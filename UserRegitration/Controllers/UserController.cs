@@ -30,10 +30,23 @@ namespace UserRegitration.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] InputUserDto userDto)
         {
-            _userService.Add(userDto.Login, userDto.Password);
+            _userService.Add(userDto.Login, userDto.Password, userDto.Email, userDto.Tel);
 
             return Ok();
         }
+
+
+        [HttpPatch]
+        public IActionResult Patch([FromBody] InputUserDto userDto)
+        {
+            _userService.Add(userDto.Login, userDto.Password, userDto.Email, userDto.Tel);
+
+            return Ok();
+        }
+
+
+
+
     }
 
 }
